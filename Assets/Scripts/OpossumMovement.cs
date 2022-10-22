@@ -5,7 +5,7 @@ using UnityEngine;
 public class OpossumMovement : MonoBehaviour
 {
     Collider2D collider;
-    private float extraDist = .1f, distToObstacle;
+    private float extraDist = .01f, distToObstacle;
     [SerializeField] private float speed = 1, initialDirection = -1;
     [SerializeField] private LayerMask obstacleMask;
     SpriteRenderer spriteRenderer;
@@ -28,33 +28,36 @@ public class OpossumMovement : MonoBehaviour
             initialDirection = -initialDirection;
             spriteRenderer.flipX = !spriteRenderer.flipX;
         }
+
     }
 
     private bool obstacleLeft()
     {
         RaycastHit2D rayHit = Physics2D.Raycast(collider.bounds.center, Vector2.left, distToObstacle + extraDist, obstacleMask);
-        Color rayColor;
-        if(rayHit.collider != null)
-        {
-            rayColor = Color.red;
-        }
-        else rayColor = Color.green;
 
-        Debug.DrawRay(collider.bounds.center, Vector2.left * (distToObstacle + extraDist), rayColor, obstacleMask);
+        //Color rayColor;
+        //if(rayHit.collider != null)
+        //{
+        //    rayColor = Color.red;
+        //}
+        //else rayColor = Color.green;
+        //Debug.DrawRay(collider.bounds.center, Vector2.left * (distToObstacle + extraDist), rayColor, obstacleMask);
+
         return rayHit.collider != null;
     }
 
     private bool obstacleRight()
     {
         RaycastHit2D rayHit = Physics2D.Raycast(collider.bounds.center, Vector2.right, distToObstacle + extraDist, obstacleMask);
-        Color rayColor;
-        if (rayHit.collider != null)
-        {
-            rayColor = Color.red;
-        }
-        else rayColor = Color.green;
 
-        Debug.DrawRay(collider.bounds.center, Vector2.right * (distToObstacle + extraDist), rayColor, obstacleMask);
+        //Color rayColor;
+        //if (rayHit.collider != null)
+        //{
+        //    rayColor = Color.red;
+        //}
+        //else rayColor = Color.green;
+        //Debug.DrawRay(collider.bounds.center, Vector2.right * (distToObstacle + extraDist), rayColor, obstacleMask);
+
         return rayHit.collider != null;
     }
 }

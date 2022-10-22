@@ -12,7 +12,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - GroundSprite
   - 
   - 
   - 
@@ -40,4 +40,25 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 635826211
+    locked: 0
+  - name: BackgroundSprite
+    uniqueID: 202617169
+    locked: 0
+  - name: Ground
+    uniqueID: 1491108171
+    locked: 0
+  - name: GroundSprite
+    uniqueID: 694461819
+    locked: 0
+  - name: Objects
+    uniqueID: 2092608223
+    locked: 0
+  - name: Player
+    uniqueID: 211583587
+    locked: 0
+  - name: ForegroundSprite
+    uniqueID: 3479342627
     locked: 0
