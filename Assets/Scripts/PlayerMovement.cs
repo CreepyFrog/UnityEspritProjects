@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        isCrouching = false;
         float hInput = Input.GetAxis("Horizontal") * speed;
 
         transform.Translate(hInput * Time.deltaTime, 0, 0);
@@ -53,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetFloat("speed", Mathf.Abs(hInput));
         animator.SetFloat("jumpSpeed", rb.velocity.y);
-        animator.SetBool("isCrouching", true);
+        animator.SetBool("isCrouching", isCrouching);
     }
 
     private bool checkGrounded()
