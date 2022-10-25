@@ -16,12 +16,13 @@ public class PlayerHealth : MonoBehaviour
     {
         if (health <= 0)
         {
-            Destroy(this);
+            Destroy(GameObject.FindGameObjectWithTag("Player"));
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("Player collided with" + collision.gameObject.name);
         if (collision.gameObject.CompareTag("Enemy")){
             health--;
         }

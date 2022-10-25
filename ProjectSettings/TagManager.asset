@@ -8,6 +8,8 @@ TagManager:
   - Ground
   - PlayerFeet
   - PlayerHead
+  - Pickups
+  - Gems
   layers:
   - Default
   - TransparentFX
@@ -59,6 +61,9 @@ TagManager:
     locked: 0
   - name: Objects
     uniqueID: 2092608223
+    locked: 0
+  - name: Pickups
+    uniqueID: 60458319
     locked: 0
   - name: Enemy
     uniqueID: 144556433

@@ -7,7 +7,7 @@ public class EnemyHealth : MonoBehaviour
     Collider2D collider;
     GameObject parent;
     Animator animator;
-    [SerializeField] private float health = 1;
+    [SerializeField] private int health = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +19,7 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        animator.SetInteger("Health", health);
         if (health <= 0)
         {
             parent.transform.localScale = new Vector3(1f, 0.3f, 1f);
