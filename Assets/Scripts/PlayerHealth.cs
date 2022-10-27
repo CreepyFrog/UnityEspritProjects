@@ -20,11 +20,16 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    Debug.Log("Player collided with" + collision.gameObject.name);
+    //    if (collision.gameObject.CompareTag("Enemy")){
+    //        health--;
+    //    }
+    //}
+
+    public void getDamaged(int damage)
     {
-        Debug.Log("Player collided with" + collision.gameObject.name);
-        if (collision.gameObject.CompareTag("Enemy")){
-            health--;
-        }
+        health -= damage;
     }
 }

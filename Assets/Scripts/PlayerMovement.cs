@@ -28,6 +28,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetAxis("Vertical") >0)
+        {
+            bounceUp(200f);
+        }
         isCrouching = false;
         float hInput = Input.GetAxis("Horizontal") * speed;
 
@@ -73,5 +77,12 @@ public class PlayerMovement : MonoBehaviour
 
         Debug.DrawRay(collider.bounds.center, Vector2.down * (distToGround + extraHeight), rayColor, groundMask);
         return raycastHit.collider != null;
+    }
+
+    public void bounceUp(float bounceForce)
+    {
+        rb.velocity = new Vector2(rb.velocity.x,0);
+        rb.AddForce(new Vector2(0f, bounceForce));
+        Debug.Log("Player Bounced");
     }
 }
